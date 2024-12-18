@@ -3,11 +3,23 @@ class Solution:
 
         n = len(prices)
 
-        for i in range(0,n-1) :
-            for j in range(i+1,n) :
-                if (prices[j] <= prices[i]) :
-                    prices[i] -= prices[j]
-                    break
+        i = 0
+        j = 1
+        while (i < n-1) :
+            if (j > n-1) :
+                i = i + 1
+                j = i + 1
+                continue
+            
+            if (prices[j] <= prices[i]) :
+                prices[i] -= prices[j]
+                i = i + 1
+                j = i + 1
+                continue
+            j = j + 1
         return prices
+            
+            
+            
             
         
