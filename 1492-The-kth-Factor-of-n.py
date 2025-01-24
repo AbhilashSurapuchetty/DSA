@@ -1,13 +1,13 @@
 class Solution:
     def kthFactor(self, n: int, k: int) -> int:
-        l = []
+        result = 0
+        count = 0
         for i in range(1,n+1) :
             if (n % i == 0) :
-                l.append(i)
-            if (len(l) >= k) :
-                break
-        if (len(l) < k) :
-            return -1
-        else :
-            return l[k-1]
+                result = i
+                count = count + 1
+            if (count == k) :
+                return result
+            
+        return -1
         
